@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using CMS.Server.Repository;
+using CMS.Server.IRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,10 @@ builder.Services.AddIdentityServer()
 
 builder.Services.AddAuthentication()
     .AddIdentityServerJwt();
+
+// Custom
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
