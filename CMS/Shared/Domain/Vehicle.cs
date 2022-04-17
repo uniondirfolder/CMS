@@ -25,5 +25,16 @@ namespace CMS.Shared.Domain
         public int ColourId { get; set; }
         public virtual Colour? Colour { get; set; }
 
+
+        public override void SetDateCreated()
+        {
+            this.DateCreated = DateTime.Now;
+        }
+
+        public override void SetDateUpdated()
+        {
+            this.DateUpdated = DateTime.Now;
+        }
+
     }
 }

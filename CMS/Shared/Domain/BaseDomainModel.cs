@@ -13,5 +13,8 @@ namespace CMS.Shared.Domain
         public string? CreatedBy { get; set; }
         public DateTime? DateUpdated { get; set; }
         public string? UpdatedBy { get; set; }
+
+        public abstract void SetDateCreated();
+        public abstract void SetDateUpdated();
     }
 }

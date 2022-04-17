@@ -9,5 +9,16 @@
 
         public virtual List<Booking>? Bookings { get; set; }
 
+
+        public override void SetDateCreated()
+        {
+            this.DateCreated = DateTime.Now;
+        }
+
+        public override void SetDateUpdated()
+        {
+            this.DateUpdated = DateTime.Now;
+        }
+
     }
 }

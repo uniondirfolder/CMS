@@ -10,10 +10,16 @@ namespace CMS.Shared.Domain
     {
         public int Id { get; set; }
         public string? Name { get; set; }
-        public DateTime? DateCreated { get; set; }
-        public string? CreatedBy { get; set; }
-        public DateTime? DateUpdated { get; set; }
-        public string? UpdatedBy { get; set; }
+    
 
+        public override void SetDateCreated()
+        {
+            DateCreated = DateTime.Now;
+        }
+
+        public override void SetDateUpdated()
+        {
+            DateUpdated = DateTime.Now;
+        }
     }
 }

@@ -4,11 +4,12 @@ namespace CMS.Server.IRepository
 {
     public interface IUnitOfWork : IDisposable
     {
-        Task Save();
+        Task Save(HttpContext httpContext);
         IGenericRepository<Make> Makes { get; }
-        //IGenericRepository<Model> Models { get; set; }
-        //IGenericRepository<Vehicle> Venicles { get; set; }
-        //IGenericRepository<Make> Makes { get; }
-        //IGenericRepository<Make> Makes { get; }
+        IGenericRepository<Model> Models { get; }
+        IGenericRepository<Vehicle> Venicles { get; }
+        IGenericRepository<Colour> Colours { get; }
+        IGenericRepository<Booking> Bookings { get; }
+        IGenericRepository<Customer> Customers { get; }
     }
 }

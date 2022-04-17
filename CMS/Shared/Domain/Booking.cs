@@ -10,5 +10,16 @@
 
         public DateTime? DateOut { get; set; }
         public DateTime? DateIn { get; set; }
+
+
+        public override void SetDateCreated()
+        {
+            this.DateCreated = DateTime.Now;
+        }
+
+        public override void SetDateUpdated()
+        {
+            this.DateUpdated = DateTime.Now;
+        }
     }
 }
